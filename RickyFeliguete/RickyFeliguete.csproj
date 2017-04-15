@@ -196,10 +196,10 @@
     <Content Include="Views\Shared\_StaticRenderPage.cshtml" />
     <Content Include="Views\Account\AvailableUserList.cshtml" />
     <Content Include="Views\Shared\_DisplayAllUsers.cshtml" />
+    <Content Include="Views\AvailableUsers\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AvailableUsers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
