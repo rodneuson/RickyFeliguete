@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RickyFeliguete.Models.AccountModels;
+using System.ComponentModel.DataAnnotations;
 
 namespace RickyFeliguete.Controllers
 {
@@ -84,6 +86,21 @@ namespace RickyFeliguete.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult Login()
+        {
+
+            ViewBag.Title = "Login";
+            return View(new AvailableUser());
+        }
+
+        [HttpPost]
+        public string Login(AvailableUser user)
+        {
+            ViewBag.Title = "Testing Login action";
+            ViewBag.UserName = user.FullName;
+            return ViewBag.Title + ViewBag.UserName;
         }
     }
 }
