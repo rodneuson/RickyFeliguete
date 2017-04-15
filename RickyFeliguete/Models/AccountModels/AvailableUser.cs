@@ -9,6 +9,7 @@ namespace RickyFeliguete.Models.AccountModels
     {
         public string UserName { get; set; }
         public string UserPassword { get; set; }
+        public string FullName { get; set; }
 
         public static List<AvailableUser> AllUsers()
         {
@@ -18,12 +19,14 @@ namespace RickyFeliguete.Models.AccountModels
             {
                 UserName = "Anupam Das",
                 UserPassword = "lifeisbeautiful",
+                FullName = "Life is Beautiful"
             };
 
             AvailableUser user2 = new AvailableUser
             {
                 UserName = "Chinmoy Das",
                 UserPassword = "GoodTime",
+                FullName = "Good Time"
             };
 
             userList.Add(user1);
