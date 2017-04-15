@@ -9,7 +9,7 @@ namespace RickyFeliguete.Controllers
     public class HomeController : Controller
     {
 
-        //comentário feliguete
+        //comentário feliguete - forçando conflito
 
         public ActionResult Index()
         {
