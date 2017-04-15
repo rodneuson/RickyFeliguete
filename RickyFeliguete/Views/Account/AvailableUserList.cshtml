@@ -1,0 +1,22 @@
+﻿@model IEnumerable<RickyFeliguete.Models.AccountModels.AvailableUser>
+
+@{
+    ViewBag.Title = "AvailableUserList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="label-danger text-center glyphicon glyphicon-search">@ViewBag.Title
+    @ViewBag.Text</h2>
+
+
+<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+<br />
+<span class="fa fa-hand-lizard-o" aria-hidden="true"></span>
+<br />
+
+@foreach (var usr in @Model)
+{
+    <text>
+        @usr.UserName  @usr.UserPassword <br />
+    </text>
+}
