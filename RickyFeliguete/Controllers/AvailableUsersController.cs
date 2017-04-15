@@ -25,22 +25,26 @@ namespace RickyFeliguete.Controllers
         // GET: AvailableUsers/Create
         public ActionResult Create()
         {
-            return View();
+            AvailableUser usr = new AvailableUser();
+            return View(usr);
         }
 
         // POST: AvailableUsers/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public string Create(AvailableUser usr)
+        //public ActionResult Create(FormCollection collection)
         {
             try
             {
                 // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return "nome de usuario = " + usr.UserName + "; senha = " + usr.UserPassword + "; nome completo = " + usr.FullName;
             }
             catch
             {
-                return View();
+                return "erro";
+                //return View("~/Views/Shared/Error.cshtml");
             }
         }
 
@@ -57,7 +61,6 @@ namespace RickyFeliguete.Controllers
             try
             {
                 // TODO: Add update logic here
-
                 return RedirectToAction("Index");
             }
             catch

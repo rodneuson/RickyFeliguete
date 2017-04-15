@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,8 +8,14 @@ namespace RickyFeliguete.Models.AccountModels
 {
     public class AvailableUser
     {
+        [Required(ErrorMessage = "Digite um nome de usuário")]
+        [Display(Name = "Nome de Usuário")]
         public string UserName { get; set; }
+        [Required(ErrorMessage = "Digite uma senha")]
+        [StringLength(10, ErrorMessage = "O tamanho máximo de caracteres é {1} e o mínimo é {2}", MinimumLength = 6)]
+        [Display(Name = "Senha")]
         public string UserPassword { get; set; }
+        [Display(Name = "Nome completo")]
         public string FullName { get; set; }
 
         public static List<AvailableUser> AllUsers()
