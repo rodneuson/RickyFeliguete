@@ -39,7 +39,14 @@ namespace RickyFeliguete.Controllers
             {
                 // TODO: Add insert logic here
                 //return RedirectToAction("Index");
-                return "nome de usuario = " + usr.UserName + "; senha = " + usr.UserPassword + "; nome completo = " + usr.FullName;
+                // return "nome de usuario = " + usr.UserName + "; senha = " + usr.UserPassword + "; nome completo = " + usr.FullName;
+
+                if (ModelState.IsValid)
+                {
+                    return "nome de usuario = " + usr.UserName + "; senha = " + usr.UserPassword + "; nome completo = " + usr.FullName;
+                }
+                else
+                    return null;
             }
             catch
             {
