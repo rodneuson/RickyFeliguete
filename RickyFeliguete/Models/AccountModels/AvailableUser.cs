@@ -10,6 +10,7 @@ namespace RickyFeliguete.Models.AccountModels
     {
         [Required(ErrorMessage = "Digite um nome de usuário")]
         [Display(Name = "Nome de Usuário")]
+        [RegularExpression(@"^[a-zA-Za]*$", ErrorMessage = "Caracteres especiais não são permitidos")]
         public string UserName { get; set; }
         [Required(ErrorMessage = "Digite uma senha")]
         [StringLength(10, ErrorMessage = "O tamanho máximo de caracteres é {1} e o mínimo é {2}", MinimumLength = 6)]
