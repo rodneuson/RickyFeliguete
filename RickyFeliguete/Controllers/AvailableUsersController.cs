@@ -101,9 +101,16 @@ namespace RickyFeliguete.Controllers
         [HttpPost]
         public string Login(AvailableUser user)
         {
-            ViewBag.Title = "Testing Login action";
-            ViewBag.UserName = user.FullName;
-            return ViewBag.Title + ViewBag.UserName;
+            if (ModelState.IsValid)
+            {
+                ViewBag.Title = "Testing Login action";
+                ViewBag.UserName = user.FullName;
+                return ViewBag.Title + ViewBag.UserName;
+            }
+            else{
+                return "Validação no servidor falhou";
+            }
+            return null;
         }
     }
 }
